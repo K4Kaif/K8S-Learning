@@ -14,3 +14,6 @@ worker node consist of three components. kubelet, kubeproxy and container runtim
     4. stopping containers
     5. managing container lifecycle
 3. kubeproxy : kube-proxy is a networking component that runs on nodes and helps implement Kubernetes Service networking
+
+Q3. what is the kube-apiServer from the control plane ?
+A. The kube-apiserver is the front end of the Kubernetes control plane. It exposes the Kubernetes API and acts as the central entry point through which kubectl, users, and other Kubernetes components communicate with the cluster
