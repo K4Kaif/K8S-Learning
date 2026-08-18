@@ -49,3 +49,10 @@ k8s-master     Ready
 k8s-worker1    Ready
 k8s-worker2    Ready
 k8s-worker3    Ready
+
+Q5. what is flannel? (CNI)
+A. Flannel is basically the networking system we added to our Kubernetes cluster.
+Kubernetes itself doesn't provide the actual Pod-to-Pod network implementation. It expects a CNI (Container Network Interface) plugin to provide that networking.
+
+Q6. what's the difference between Docker compose and K8S pods?
+A. Docker Compose is used to define and manage multiple Docker containers as an application, whereas a Kubernetes Pod is the smallest deployable unit in Kubernetes and can contain one or more tightly coupled containers
