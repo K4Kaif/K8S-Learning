@@ -17,3 +17,35 @@ worker node consist of three components. kubelet, kubeproxy and container runtim
 
 Q3. what is the kube-apiServer from the control plane ?
 A. The kube-apiserver is the front end of the Kubernetes control plane. It exposes the Kubernetes API and acts as the central entry point through which kubectl, users, and other Kubernetes components communicate with the cluster
+
+Q4. what is the use of kubernetes bootstrap token? "cluster administration"
+A. A kubeadm bootstrap token is a temporary credential used to authenticate a new node while it joins an existing Kubernetes cluster.
+  1. On k8s-master
+
+Generate a fresh join command:
+
+kubeadm token create --print-join-command
+
+It will give you:
+
+kubeadm join 192.168.175.141:6443 \
+  --token xxxxx.xxxxxxxxxxxxxxxx \
+  --discovery-token-ca-cert-hash sha256:xxxxxxxx
+2. On k8s-worker3
+
+Run that generated command:
+
+sudo kubeadm join 192.168.175.141:6443 \
+  --token xxxxx.xxxxxxxxxxxxxxxx \
+  --discovery-token-ca-cert-hash sha256:xxxxxxxx
+
+Then on the master:
+
+kubectl get nodes
+
+You'll see:
+
+k8s-master     Ready
+k8s-worker1    Ready
+k8s-worker2    Ready
+k8s-worker3    Ready
