@@ -65,3 +65,5 @@ commands we learn today
 5. kubectl get pods -o wide (fetch pods with full details)
 6. kubectl delete pod <podname> (to delete the specific pod)
 7. kubectl describe pod <podname> (to get the details of a particular pod)
+8. kubectl logs <podname> (provides to debug a pod and check the logs of a pod)
+9. 
