@@ -56,3 +56,12 @@ Kubernetes itself doesn't provide the actual Pod-to-Pod network implementation. 
 
 Q6. what's the difference between Docker compose and K8S pods?
 A. Docker Compose is used to define and manage multiple Docker containers as an application, whereas a Kubernetes Pod is the smallest deployable unit in Kubernetes and can contain one or more tightly coupled containers
+
+commands we learn today
+kubectl get nodes (fetch all nodes)
+kubectl get nodes -o wide (fetch nodes with full details)
+kubectl create -f pod.yaml (command to create a pod using pod.yaml file)
+kubectl get pods (to fetch all the running pods)
+kubectl get pods -o wide (fetch pods with full details)
+kubectl delete pod <podname> (to delete the specific pod)
+kubectl describe pod <podname> (to get the details of a particular pod)
