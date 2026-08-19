@@ -54,13 +54,13 @@ Q5. what is flannel? (CNI)
 A. Flannel is basically the networking system we added to our Kubernetes cluster.
 Kubernetes itself doesn't provide the actual Pod-to-Pod network implementation. It expects a CNI (Container Network Interface) plugin to provide that networking.
 
-Q7. what is Workload?
+Q6. what is Workload?
 A. A workload in Kubernetes represents an application or task that Kubernetes needs to run and manage. Kubernetes provides workload resources such as Deployments, StatefulSets, DaemonSets, Jobs, and CronJobs to manage Pods. For example, if I create a Deployment with three replicas of my EventCraft application, Kubernetes creates and maintains three Pods, and if one Pod fails, the Deployment ensures a replacement is created.
 Easy memory trick:
 Workload = What you want Kubernetes to run.
 Pod = Where your container actually runs.
 
-Q6. what's the difference between Docker compose and K8S pods?
+Q7. what's the difference between Docker compose and K8S pods?
 A. Docker Compose is used to define and manage multiple Docker containers as an application, whereas a Kubernetes Pod is the smallest deployable unit in Kubernetes and can contain one or more tightly coupled containers
 
 commands we learn today
@@ -72,3 +72,9 @@ commands we learn today
 6. kubectl delete pod <podname> (to delete the specific pod)
 7. kubectl describe pod <podname> (to get the details of a particular pod)
 8. kubectl logs <podname> (provides to debug a pod and check the logs of a pod)
+
+Q8. what is deployment?
+A. deployment is the one who manage pods. for example you want to create 10 pods you'll define that in Yaml manifesto of deployment. and then the 
+manifesto -> deployment -> Replica set -> pods
+so here  deployment create defined pods with the help of replica set. 
+why we use Deployment when there is pod.yaml already because with pod.yaml we have to create it manually one by one here deploment's replica set do it in few seconds
