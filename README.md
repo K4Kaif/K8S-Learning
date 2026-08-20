@@ -78,3 +78,7 @@ A. deployment is the one who manage pods. for example you want to create 10 pods
 manifesto -> deployment -> Replica set -> pods
 so here  deployment create defined pods with the help of replica set. 
 why we use Deployment when there is pod.yaml already because with pod.yaml we have to create it manually one by one here deploment's replica set do it in few seconds
+
+q9. what is a service?
+A. a service is able to provide the stable network to the pods. suppose when a pod dies and we created a new Pod the pod get a new IP. instead of connnecting directly to the pod, client connect to the service and service forward the traffic to the appropriate pods.
+
