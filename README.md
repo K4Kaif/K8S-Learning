@@ -81,6 +81,7 @@ why we use Deployment when there is pod.yaml already because with pod.yaml we ha
 
 q9. what is a service?
 A. a service is able to provide the stable network to the pods. suppose when a pod dies and we created a new Pod the pod get a new IP. instead of connnecting directly to the pod, client connect to the service and service forward the traffic to the appropriate pods.
+the other advantage of a service is Load Balancing. it divides the traffic and send it to the healthy and stable pods.
 
 Deployment → manages Pods
 Pod → manage/runs containers
